@@ -19,6 +19,7 @@
         <fields name="params">
             <fieldset name="basic">
                 <field name="id" type="text" default="REMOTE_USER" label="Id" description="Shibboleth id attribute name." size="30"/>
+                <field name="idp" type="text" default="Shib-Identity-Provider" label="Id" description="Shibboleth idp attribute name." size="30"/>
                 <field name="email" type="text" default="HTTP_MAIL" label="Email" description="Shibboleth email attribute name."  size="30"/>
                 <field
                         name="allowedidps"

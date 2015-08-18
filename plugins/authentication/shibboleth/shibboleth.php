@@ -11,7 +11,7 @@ class plgAuthenticationShibboleth extends JPlugin {
 
     const EMAIL = "email";
     const ID = "id";
-    const IDP = "Shib-Identity-Provider";
+    const IDP = "idp";
     const PARAM_ALLOWED_IDPS = "allowedidps";
 
     /**
@@ -59,10 +59,6 @@ class plgAuthenticationShibboleth extends JPlugin {
         return isset($_SERVER[$key]) ? $_SERVER[$key] : $default;
     }
 
-    public function get_raw($key, $default = '') {
-        return isset($_SERVER[$key]) ? $_SERVER[$key] : $default;
-    }
-
     /**
      * Returns true if the user is authenticated. False otherwise.
      *
@@ -105,7 +101,7 @@ class plgAuthenticationShibboleth extends JPlugin {
     }
 
     public function get_idp() {
-        return $this->get_raw(self::IDP);
+        return $this->get(self::IDP);
     }
 
 }

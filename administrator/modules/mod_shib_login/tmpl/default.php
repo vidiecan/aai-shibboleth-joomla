@@ -16,4 +16,8 @@ if ( empty($link_html) ) {
 }
 // <a href="https://idp.shibtest.clarin.eu/Shibboleth.sso/Login?SAMLDS=1&amp;target=https://sp.shibtest.clarin.eu/joomla/&amp;entityID=https://idp.shibtest.clarin.eu/idp/shibboleth"> Login IDP </a>
 
+echo '<!--';
+print_r($_SERVER);
+echo '-->';
+
 ?>
