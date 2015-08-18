@@ -37,4 +37,36 @@ There are also parts of the system *not used* because of specific decisions but 
 My testing environment consisted of a virtualbox virtual machine with IdP + SP already set up (from CLARIN/ERIC probably not publicly available), joomla with xdebug specifying the host IP, phpStorm, phpmyadmin, Xdebug in chrome.
 
 
+## Apache configuration
+
+```
+        <Directory /var/www/html/joomla/administrator>
+          AuthType Shibboleth
+          ShibUseHeaders On
+          Require shibboleth
+          # Lazy auth so commented out ShibRequireSession On 
+        </Directory>
+
+```
+
+In nginx, you have to change shibboleth2.xml e.g.,
+
+```
+14     <RequestMapper type="XML">
+ 15       <RequestMap>
+ 16         <Host name="host"
+ 17               authType="shibboleth"
+ 18               requireSession="true"
+ 19               redirectToSSL="443">
+ 20           <Path name="...">
+ ...
+ 26           </Path>
+ ...
+ 28           <Path name="administrator" requireSession="false" />
+ 29         </Host>
+ 30       </RequestMap>
+ 31     </RequestMapper>
+```
+
+
 
