@@ -16,4 +16,14 @@ $params 		  = ModShibLoginHelper::get_params();
 $link_html		  = ModShibLoginHelper::get_link_html();
 $result 		  = ModShibLoginHelper::login();
 
+
+// if the user is logged in AND redirect was not from the same server => prob. IdP
+// make life easier and redirect
+if ( $result 
+        && !empty($_SERVER['HTTP_REFERER']) 
+            && strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) === false ) {
+    $redirect = JRoute::_('administrator');
+    $app->redirect($redirect);
+}
+
 require JModuleHelper::getLayoutPath('mod_shib_login', 'default');
