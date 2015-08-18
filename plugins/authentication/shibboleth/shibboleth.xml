@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    version="1.0"
+    type="plugin"
+    group="authentication">
+    <name>shibboleth - authentication</name>
+    <author>jm</author>
+    <creationDate>August 2015</creationDate>
+    <copyright></copyright>
+    <license></license>
+    <authorEmail></authorEmail>
+    <authorUrl>www.lindat.cz</authorUrl>
+    <version>1.0</version>
+    <description>Shibboleth authentication based on attributes stored in environment</description>
+    <files>
+        <filename plugin="shibboleth">shibboleth.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="id" type="text" default="REMOTE_USER" label="Id" description="Shibboleth id attribute name." size="30"/>
+                <field name="email" type="text" default="HTTP_MAIL" label="Email" description="Shibboleth email attribute name."  size="30"/>
+                <field
+                        name="allowedidps"
+                        type="textarea"
+                        rows="40"
+                        cols="15"
+                        default=""
+                        label="List of allowed idps"
+                        description="One idp entityID per row (substring contains matching)" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

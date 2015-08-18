@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.0"
+	client="site"
+	method="upgrade">
+	<name>shibboleth frontend login</name>
+	<author>jm</author>
+	<creationDate>August 2015</creationDate>
+	<copyright></copyright>
+	<license></license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.lindat.cz</authorUrl>
+	<version>1.0.0</version>
+	<description>Shibboleth frontend login UI fragment</description>
+	<files>
+		<filename module="mod_shib_login">mod_shib_login.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_shib_login.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_login.ini</language>
+		<language tag="en-GB">en-GB.mod_login.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="id"
+					type="text"
+					default="REMOTE_USER"
+					label="Id"
+					description="$_SERVER variable indicating external authentication was done."
+					size="30"/>
+				<field
+					name="logintext"
+					type="text"
+					default="LOGIN"
+					label="Login button text"
+					description="The text of the login link." />
+				<field
+					name="logouturl"
+					type="text"
+					default="/Shibboleth.SSO/Logout?"
+					label="Logout url"
+					description="This works for one IdP authentication." />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
