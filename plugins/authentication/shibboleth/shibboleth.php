@@ -14,6 +14,8 @@ class plgAuthenticationShibboleth extends JPlugin {
     const IDP = "idp";
     const PARAM_ALLOWED_IDPS = "allowedidps";
 
+    public $name = "plgAuthenticationShibboleth";
+
     /**
      * Constructor
      */
