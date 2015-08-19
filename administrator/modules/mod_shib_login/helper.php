@@ -22,7 +22,7 @@ class ModShibLoginHelper
 	const ID = 'id';
 	const PARAM_REMEMBER = 'remember';
 	const PARAM_LINK_HTML = 'htmllinks';
-	const JOOMLA_USER_USERNAME = 'password';
+	const JOOMLA_USER_USERNAME = 'username';
 	const JOOMLA_USER_PASSWORD = 'password';
 
 	static $params = null;
