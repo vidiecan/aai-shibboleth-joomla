@@ -2,7 +2,7 @@
 <extension
 	type="module"
 	version="1.0"
-	client="site"
+	client="administrator"
 	method="upgrade">
 	<name>shibboleth backend login</name>
 	<author>jm</author>
